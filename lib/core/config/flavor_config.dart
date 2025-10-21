@@ -25,7 +25,8 @@ class FlavorConfig {
 
   static FlavorConfig get instance {
     if (_instance == null) {
-      throw StateError('FlavorConfig not initialized. Call initialize() first.');
+      throw StateError(
+          'FlavorConfig not initialized. Call initialize() first.');
     }
     return _instance!;
   }

@@ -12,7 +12,7 @@ final getIt = GetIt.instance;
 )
 Future<void> configureDependencies() async {
   getIt.init();
-  
+
   // Manually register AppRouter if not auto-generated
   if (!getIt.isRegistered<AppRouter>()) {
     getIt.registerLazySingleton<AppRouter>(AppRouter.new);
