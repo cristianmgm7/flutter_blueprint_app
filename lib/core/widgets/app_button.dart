@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 enum AppButtonType { elevated, outlined, text }
 
 class AppButton extends StatelessWidget {
+
   // constructor
   const AppButton({
     required this.text,
@@ -13,7 +14,7 @@ class AppButton extends StatelessWidget {
     this.fullWidth = false,
     super.key,
   });
-
+  // constructors
   const AppButton.elevated({
     required this.text,
     required this.onPressed,
@@ -22,7 +23,7 @@ class AppButton extends StatelessWidget {
     this.fullWidth = false,
     super.key,
   }) : type = AppButtonType.elevated;
-
+  // constructor
   const AppButton.outlined({
     required this.text,
     required this.onPressed,
@@ -32,6 +33,7 @@ class AppButton extends StatelessWidget {
     super.key,
   }) : type = AppButtonType.outlined;
 
+  // constructor
   const AppButton.text({
     required this.text,
     required this.onPressed,
@@ -41,7 +43,7 @@ class AppButton extends StatelessWidget {
     super.key,
   }) : type = AppButtonType.text;
 
-  // properties
+   // properties
   final String text;
   final VoidCallback? onPressed;
   final bool isLoading;
@@ -51,13 +53,16 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // build the button based on the type
     final Widget button = switch (type) {
       AppButtonType.elevated => _buildElevatedButton(context),
       AppButtonType.outlined => _buildOutlinedButton(context),
       AppButtonType.text => _buildTextButton(context),
     };
 
-    return fullWidth ? SizedBox(width: double.infinity, child: button) : button;
+    return fullWidth
+        ? SizedBox(width: double.infinity, child: button)
+        : button;
   }
 
   Widget _buildElevatedButton(BuildContext context) {
